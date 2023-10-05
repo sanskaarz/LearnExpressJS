@@ -1,0 +1,11 @@
+{
+  "name": "learnexpressjs",
+  "version": "1.0.0",
+  "description": "Learning Express",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "sanskaarz",
+  "license": "MIT"
+}
