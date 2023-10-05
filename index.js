@@ -17,13 +17,10 @@ app.get("/search", (req, res) => {
 app.get("/contact", (req, res) => {
     res.send("Let's connect")
 })
-app.get("*", (req, res) => {
+app.get("*", (req, res) => { // Default only works when the path is incorrect.
     res.send("This path does not exist")
 })
 
 app.listen(port, () => {
         console.log(`app is listening on ${port}`);
 })
-
-
-    
