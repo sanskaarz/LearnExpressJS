@@ -47,17 +47,3 @@ const [first, , third] = numbers;
 
 console.log(first);  // Outputs: 1
 console.log(third);  // Outputs: 3
-
-
-
-
-const person = {
-  name: 'John',
-  age: 30,
-  username: 'sanskaarz'
-};
-
-// Using destructuring to extract 'username' & 'age' property
-
-let {username, age} = person;               //now these two are work as variables
-console.log(username);                      // Outputs: 'sanskaarz'
