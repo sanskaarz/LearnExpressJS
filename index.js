@@ -3,18 +3,14 @@ const app = express();
 
 let port = 3000;
 
-app.use((req, res,) => {
-    console.log(`Request received: ${req.method} ${req.url}`);
-    res.send("Hello ji, Sanskar Over hereeeee")
-});
-    
 app.get("/", (req, res) => {
     res.send('This is a roott path')
+    console.log("root request")
 });
 
-
 app.get("/search", (req, res) => {
-        res.send("Let's search")
+    console.log("Search request")
+    res.send("Let's search")
 });
 
 app.get("/contact", (req, res) => {
@@ -34,16 +30,12 @@ app.get("*", (req, res) => { // Default only works when the path is incorrect.
     console.log("invalid path")
 });
 
-
-app.listen(port, () => {
-        console.log(`app is listening on ${port}`);
+app.use((req, res,next) => {
+    console.log(`Request received: ${req.method} ${req.url}`);
+    res.send("Hello ji, Sanskar Over hereeeee");
+    next();
 });
 
-
-const numbers = [1, 2, 3, 4, 5];
-
-// Destructuring assignment with skipped elements
-const [first, , third] = numbers;
-
-console.log(first);  // Outputs: 1
-console.log(third);  // Outputs: 3
+app.listen(3000, () => {
+        console.log(`app is listening on ${port}`);
+});
