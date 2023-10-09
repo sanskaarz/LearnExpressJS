@@ -4,13 +4,14 @@ const app = express();
 let port = 3000;
 
 app.use((req, res,) => {
-        console.log(`Request received: ${req.method} ${req.url}`);
-        res.send("Hello ji, Sanskar Over hereeeee")
+    console.log(`Request received: ${req.method} ${req.url}`);
+    res.send("Hello ji, Sanskar Over hereeeee")
 });
     
 app.get("/", (req, res) => {
     res.send('This is a roott path')
 });
+
 
 app.get("/search", (req, res) => {
         res.send("Let's search")
@@ -36,4 +37,27 @@ app.get("*", (req, res) => { // Default only works when the path is incorrect.
 
 app.listen(port, () => {
         console.log(`app is listening on ${port}`);
-})
+});
+
+
+const numbers = [1, 2, 3, 4, 5];
+
+// Destructuring assignment with skipped elements
+const [first, , third] = numbers;
+
+console.log(first);  // Outputs: 1
+console.log(third);  // Outputs: 3
+
+
+
+
+const person = {
+  name: 'John',
+  age: 30,
+  username: 'sanskaarz'
+};
+
+// Using destructuring to extract 'username' & 'age' property
+
+let {username, age} = person;               //now these two are work as variables
+console.log(username);                      // Outputs: 'sanskaarz'
