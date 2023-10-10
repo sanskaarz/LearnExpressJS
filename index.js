@@ -1,7 +1,7 @@
 const express = require("express");
 const app = express();
 
-let port = 3000;
+let port = 8080;
 
 app.use((req, res,next) => {
     console.log(`Request received: ${req.method} ${req.url}`);
@@ -9,7 +9,7 @@ app.use((req, res,next) => {
 });
 
 app.get("/", (req, res) => {
-    res.send('This is a roott path')
+    res.send('This is a root path')
     console.log("root request")
 });
 
@@ -36,7 +36,6 @@ app.get("/search" , (req,res) =>{
     if(!q){
         res.send("No Search Query")
     }
-
     res.send(`These are the results for your query: ${q}`)
 });
 
@@ -45,6 +44,6 @@ app.get("*", (req, res) => { // Default only works when the path is incorrect.
     console.log("invalid path")
 });
 
-app.listen(8080, () => {
+app.listen(port, () => {
         console.log(`app is listening on ${port}`);
 });
