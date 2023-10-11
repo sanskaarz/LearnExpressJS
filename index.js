@@ -1,7 +1,11 @@
 const express = require("express");
 const app = express();
+const path = require("path") 
 
 let port = 8080;
+
+app.set("view engine" , "ejs");
+app.set("views", path.join(__dirname, "Templates/views"))
 
 app.use((req, res,next) => {
     console.log(`Request received: ${req.method} ${req.url}`);
@@ -26,7 +30,7 @@ app.get("/contact", (req, res) => {
 
 app.get("/user/:username/:id" , (req , res) => {
     let{ username, id } = req.params;
-    res.send(`welcome ${username}! Your id is ${id}`);
+    res.render("home.ejs", {username,id});
     console.log("request recieved")
 });
 
